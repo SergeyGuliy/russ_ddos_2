@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "service:forceKill": "docker container kill $(docker ps -a -q) || docker container kill $(docker ps -q)",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run stop && docker run -d --restart unless-stopped gcr.io/fuck-russia-342819/nowarddos:latest 1000",
+    "startLog": "npm run start && npm run log",
+    "stop": "docker container kill $(docker ps -q)",
+    "log": "docker logs -f $(docker ps -q)"
   },
   "author": "",
   "license": "ISC"
