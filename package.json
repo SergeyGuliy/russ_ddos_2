@@ -1,0 +1,12 @@
+{
+  "name": "russ_ddos_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "service:forceKill": "docker container kill $(docker ps -a -q) || docker container kill $(docker ps -q)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
